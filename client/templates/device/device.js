@@ -15,7 +15,7 @@ Template.device.events({
 					break;
 				}
 			}
-			Session.setPersistent('devices',devices);			
+			Session.setPersistent('devices',devices);
 		}
 	},
 	'click .connect':function(e){
@@ -49,22 +49,22 @@ Template.device.events({
 	'click .sendCustom':function(e){
 		var tpl = Template.instance();
 		e.preventDefault();
-		swal({   
-			title: "Send custom message",   
-			text: "Write your custom message:",   
-			type: "input",   
-			showCancelButton: true,   
-			closeOnConfirm: false,   
-			animation: "slide-from-top",   
-			inputPlaceholder: "Write something" 
-		}, function(inputValue){   
-			if (inputValue === false) 
-				return false;      
-			if (inputValue === "") {     
-				swal.showInputError("You need to write something!");     
-				return false   
-			}      
-			swal("Nice!", "You wrote: " + inputValue, "success"); 
+		swal({
+			title: "Send custom message",
+			text: "Write your custom message:",
+			type: "input",
+			showCancelButton: true,
+			closeOnConfirm: false,
+			animation: "slide-from-top",
+			inputPlaceholder: "Write something"
+		}, function(inputValue){
+			if (inputValue === false)
+				return false;
+			if (inputValue === "") {
+				swal.showInputError("You need to write something!");
+				return false
+			}
+			swal("Nice!", "You wrote: " + inputValue, "success");
 			tpl.sendCustom(inputValue);
 		});
 
@@ -111,7 +111,7 @@ Template.device.rendered = function(){
 		Session.set('devices.'+_this.data._id+".connection",status);
 	}
 
-	
+
 
 	this.emulator = new Emulator();
 	this.emulator.init(this.data.model,this.data._id, this.data.uid);
@@ -202,7 +202,7 @@ Template.device.rendered = function(){
 	_this.connect();
 
 
-	
+
 }
 
 Template.device.destroyed = function(){
